@@ -1,4 +1,4 @@
-import 'package:cinemabillet/ecran/ticket/recu_screen.dart';
+import 'package:cinemabillet/ecran/accueil/recap_recu_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -419,7 +419,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const RecuScreen(),
+                  builder: (context) => const RecapRecuScreen(),
                 ),
               );
             },
