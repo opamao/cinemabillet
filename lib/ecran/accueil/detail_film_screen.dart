@@ -1,3 +1,4 @@
+import 'package:cinemabillet/ecran/accueil/select_date_screen.dart';
 import 'package:flutter/material.dart';
 
 class DetailFilmScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _DetailFilmScreenState extends State<DetailFilmScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
-              children: <Widget> [
+              children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
@@ -268,7 +269,14 @@ class _DetailFilmScreenState extends State<DetailFilmScreen> {
         child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.6,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SelectDateScreen(),
+                ),
+              );
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.lightGreenAccent,
               shape: RoundedRectangleBorder(
