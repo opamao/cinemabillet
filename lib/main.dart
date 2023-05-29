@@ -1,4 +1,7 @@
-import 'package:cinemabillet/ecran/splash_screen.dart';
+import 'package:cinemabillet/ecran/auth/login_screen.dart';
+import 'package:cinemabillet/ecran/splash/splash_screen.dart';
+import 'package:cinemabillet/utils/page_not_found_screen.dart';
+import 'package:cinemabillet/utils/route.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CAT',
       theme: ThemeData(
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
@@ -28,65 +31,29 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Réservation de ticket de cinéma'),
+      home: const SplashScreen(),
+      onGenerateRoute: (settings) => RouteGenerator.generateRoute(settings),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class RouteGenerator {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    final args = settings.arguments;
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title, style: TextStyle(color: Colors.white),),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              '$_counter',
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightGreenAccent,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const SplashScreen(),
-            ),
-          );
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+    switch (settings.name) {
+      case Routes.splash:
+        return MaterialPageRoute(
+          builder: (context) => const SplashScreen(),
+        );
+      case Routes.login:
+        return MaterialPageRoute(
+          builder: (context) => const LoginScreen()
+        );
+      default:
+        return MaterialPageRoute(
+          builder: (context) => const PageNotFoundScreen(),
+        );
+    }
   }
 }
