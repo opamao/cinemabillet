@@ -145,7 +145,7 @@ class _RecuScreenState extends State<RecuScreen> {
                             children: [
                               Container(
                                 alignment: Alignment.centerLeft,
-                                width: 160,
+                                width: 130,
                                 decoration: BoxDecoration(
                                   color: Colors.grey.shade700,
                                   borderRadius: BorderRadius.circular(15),
@@ -188,7 +188,7 @@ class _RecuScreenState extends State<RecuScreen> {
                               ),
                               Container(
                                 alignment: Alignment.centerLeft,
-                                width: 160,
+                                width: 130,
                                 decoration: BoxDecoration(
                                   color: Colors.grey.shade700,
                                   borderRadius: BorderRadius.circular(15),
@@ -295,28 +295,27 @@ class _RecuScreenState extends State<RecuScreen> {
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: QrImageView(
                         data: '1337-1476-88',
                         version: QrVersions.auto,
-                        size: 250,
+                        size: 155,
                         gapless: false,
                         embeddedImage: const AssetImage('assets/images/photo.jpeg'),
                         embeddedImageStyle: const QrEmbeddedImageStyle(
-                          size: Size(80, 80),
+                          size: Size(40, 40),
                         ),
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(10.0),
                       child: Text(
                         "Scanner pour valider le ticket pour rentrer",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 13,
                           color: Colors.grey,
                         ),
                       ),

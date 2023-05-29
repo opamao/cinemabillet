@@ -108,7 +108,7 @@ class _TicketScreenState extends State<TicketScreen>
                         ),
                       ),
                       Expanded(
-                        flex: 7,
+                        flex: 6,
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,
@@ -1215,7 +1215,7 @@ class _TicketScreenState extends State<TicketScreen>
                         ),
                       ),
                       Expanded(
-                        flex: 7,
+                        flex: 6,
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,

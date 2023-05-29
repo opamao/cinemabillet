@@ -1,6 +1,6 @@
 import 'package:cinemabillet/ecran/accueil/accueil_screen.dart';
 import 'package:cinemabillet/ecran/compte/compte_screen.dart';
-import 'package:cinemabillet/ecran/notification/notification_screen.dart';
+import 'package:cinemabillet/ecran/films/notification_screen.dart';
 import 'package:cinemabillet/ecran/ticket/ticket_screen.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
           icon: const Icon(Icons.home),
         ),
         CustomNavigationBarItem(
-          icon: const Icon(Icons.notifications_outlined),
+          icon: const Icon(Icons.movie_outlined),
         ),
         CustomNavigationBarItem(
           icon: const Icon(Icons.confirmation_number_outlined),

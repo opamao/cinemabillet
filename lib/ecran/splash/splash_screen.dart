@@ -82,7 +82,7 @@ class ScreenUn extends StatelessWidget {
                         "Avec notre interface intuitive et conviviale, vous pourrez facilement découvrir les films à l'affiche, consulter les horaires des séances, réserver vos places et même obtenir des recommandations personnalisées en fonction de vos préférences.",
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.normal,
                         ),
                       ),
@@ -168,7 +168,7 @@ class ScreenDeux extends StatelessWidget {
                       "Plongez dans un océan de divertissement avec notre vaste catalogue de films variés, des succès du box-office aux classiques intemporels. Découvrez de nouvelles histoires, des mondes fantastiques, des intrigues palpitantes et des performances d'acteurs remarquables.",
                       style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 20,
+                        fontSize: 16,
                         fontWeight: FontWeight.normal,
                       ),
                     ),

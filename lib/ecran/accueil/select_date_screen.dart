@@ -67,13 +67,15 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
         ),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             mois,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: (selected == index) ? Colors.black : Colors.grey,
-              fontSize: 20,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -82,7 +84,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: (selected == index) ? Colors.black : Colors.grey,
-              fontSize: 18,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
           )
@@ -119,7 +121,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
           textAlign: TextAlign.center,
           style: TextStyle(
             color: (selectedTime == index) ? Colors.black : Colors.grey,
-            fontSize: 20,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -164,7 +166,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
         child: Column(
           children: [
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -224,8 +226,8 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                             Row(
                               children: [
                                 Container(
-                                  height: 25,
-                                  width: 25,
+                                  height: 18,
+                                  width: 18,
                                   decoration: BoxDecoration(
                                     border: Border.all(
                                       color: Colors.lightGreenAccent,
@@ -239,7 +241,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                                   "Disponible",
                                   style: TextStyle(
                                     fontWeight: FontWeight.normal,
-                                    fontSize: 18,
+                                    fontSize: 13,
                                     color: Colors.white,
                                   ),
                                 )
@@ -248,8 +250,8 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                             Row(
                               children: [
                                 Container(
-                                  height: 25,
-                                  width: 25,
+                                  height: 18,
+                                  width: 18,
                                   decoration: BoxDecoration(
                                     color: Colors.green.shade700,
                                     border: Border.all(
@@ -264,7 +266,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                                   "Réserver",
                                   style: TextStyle(
                                     fontWeight: FontWeight.normal,
-                                    fontSize: 18,
+                                    fontSize: 13,
                                     color: Colors.white,
                                   ),
                                 )
@@ -273,8 +275,8 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                             Row(
                               children: [
                                 Container(
-                                  height: 25,
-                                  width: 25,
+                                  height: 18,
+                                  width: 18,
                                   decoration: BoxDecoration(
                                     color: Colors.lightGreenAccent,
                                     border: Border.all(
@@ -289,7 +291,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                                   "Sélectionner",
                                   style: TextStyle(
                                     fontWeight: FontWeight.normal,
-                                    fontSize: 18,
+                                    fontSize: 13,
                                     color: Colors.white,
                                   ),
                                 )
@@ -323,7 +325,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                           textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -376,7 +378,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                           textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

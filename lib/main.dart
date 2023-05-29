@@ -1,4 +1,8 @@
+import 'package:cinemabillet/ecran/accueil/accueil_screen.dart';
+import 'package:cinemabillet/ecran/auth/forgot_screen.dart';
 import 'package:cinemabillet/ecran/auth/login_screen.dart';
+import 'package:cinemabillet/ecran/auth/register_screen.dart';
+import 'package:cinemabillet/ecran/menu_screen.dart';
 import 'package:cinemabillet/ecran/splash/splash_screen.dart';
 import 'package:cinemabillet/utils/page_not_found_screen.dart';
 import 'package:cinemabillet/utils/route.dart';
@@ -49,6 +53,18 @@ class RouteGenerator {
       case Routes.login:
         return MaterialPageRoute(
           builder: (context) => const LoginScreen()
+        );
+      case Routes.home:
+        return MaterialPageRoute(
+          builder: (context) => const MenuScreen()
+        );
+      case Routes.forgot:
+        return MaterialPageRoute(
+          builder: (context) => const ForgotScreen()
+        );
+      case Routes.register:
+        return MaterialPageRoute(
+          builder: (context) => const RegisterScreen()
         );
       default:
         return MaterialPageRoute(
