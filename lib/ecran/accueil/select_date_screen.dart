@@ -3,18 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class Seat {
-  final String id;
-  final int row;
+  String? id;
+  int? row;
   final int number;
   bool isReserved;
   bool isSelected;
 
-  Seat(
-      {required this.id,
-      required this.row,
-      required this.number,
-      this.isReserved = false,
-      this.isSelected = false});
+  Seat({
+    this.id,
+    this.row,
+    required this.number,
+    this.isReserved = false,
+    this.isSelected = false,
+  });
 }
 
 class SelectDateScreen extends StatefulWidget {
@@ -24,24 +25,38 @@ class SelectDateScreen extends StatefulWidget {
   State<SelectDateScreen> createState() => _SelectDateScreenState();
 }
 
-class _SelectDateScreenState extends State<SelectDateScreen> {
-  List<Seat> seats = List.generate(
-    5,
-    (row) => List.generate(
-      6,
-      (number) => Seat(
-        id: '${String.fromCharCode(row + 65)}$number',
-        row: row,
-        number: number,
-      ),
-    ),
-  ).expand((list) => list).toList();
+/*
+ [
+ S,S,S,S,V,V,S,S,S,S
 
+ ]
+ */
+class _SelectDateScreenState extends State<SelectDateScreen> {
   int selected = 0;
   int selectedTime = 0;
   String dates = "";
   String jours = "";
   String heures = "";
+
+  List<int> reservedSeatIndex = [0, 2, 3, 12, 13];
+
+  List<Seat> seats = [];
+
+  @override
+  void initState() {
+    seats = List.generate(
+      50,
+      (index) {
+        var emptySeat = index % 10 == 4 || index % 10 == 5;
+        return Seat(
+            id: '${String.fromCharCode(index + 65)}$index',
+            number: emptySeat ? -1 : index + 1,
+            isReserved: reservedSeatIndex.contains(index));
+      },
+    );
+
+    super.initState();
+  }
 
   Widget customDate(String mois, String jour, int index) {
     return OutlinedButton(
@@ -180,7 +195,7 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                       children: [
                         Expanded(
                           child: GridView.count(
-                            crossAxisCount: 6,
+                            crossAxisCount: 10,
                             children: seats.map<Widget>((seat) {
                               return GestureDetector(
                                 onTap: () {
@@ -190,32 +205,27 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                                     });
                                   }
                                 },
-                                child: Container(
-                                  margin: const EdgeInsets.all(4),
-                                  decoration: BoxDecoration(
-                                    color: seat.isReserved
-                                        ? Colors.green.shade700
-                                        : seat.isSelected
-                                            ? Colors.lightGreenAccent
-                                            : Colors.transparent,
-                                    border: Border.all(
-                                      color: Colors.lightGreenAccent,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      seat.number.toString(),
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: seat.isReserved
-                                            ? Colors.black
-                                            : Colors.lightGreenAccent,
+                                child: seat.number == -1
+                                    ? Container()
+                                    : Container(
+                                        margin: const EdgeInsets.all(4),
+                                        decoration: BoxDecoration(
+                                          color: seat.isReserved
+                                              ? Colors.lightGreenAccent.withOpacity(.3)
+                                              : seat.isSelected
+                                                  ? Colors.lightGreenAccent
+                                                  : Colors.transparent,
+                                          border: Border.all(
+                                            color: seat.isReserved
+                                                ? Colors.lightGreenAccent
+                                                    .withOpacity(.3)
+                                                : Colors.lightGreenAccent,
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                ),
                               );
                             }).toList(),
                           ),
@@ -253,9 +263,11 @@ class _SelectDateScreenState extends State<SelectDateScreen> {
                                   height: 18,
                                   width: 18,
                                   decoration: BoxDecoration(
-                                    color: Colors.green.shade700,
+                                    color: Colors.lightGreenAccent
+                                        .withOpacity(.3),
                                     border: Border.all(
-                                      color: Colors.green.shade700,
+                                      color: Colors.lightGreenAccent
+                                          .withOpacity(.3),
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(5),
