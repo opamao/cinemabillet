@@ -80,7 +80,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
           crossAxisSpacing: 10.0,
           children: <Widget>[
             InkWell(
-              onTap: () {},
+              onTap: () {
+                
+              },
               child: Container(
                 decoration: BoxDecoration(
                   image: const DecorationImage(
