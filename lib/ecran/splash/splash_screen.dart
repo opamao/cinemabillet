@@ -54,7 +54,7 @@ class ScreenUn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
@@ -72,7 +72,7 @@ class ScreenUn extends StatelessWidget {
                         "Au cinéma",
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                          color: Colors.green,
+                          color: Colors.lightGreenAccent,
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
                         ),
@@ -140,7 +140,7 @@ class ScreenDeux extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -158,7 +158,7 @@ class ScreenDeux extends StatelessWidget {
                       "En ligne",
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                        color: Colors.green,
+                        color: Colors.lightGreenAccent,
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
                       ),

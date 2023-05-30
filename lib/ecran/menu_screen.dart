@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   splashColor: Colors.lightGreenAccent,
                   onTap: () {},
                   child: const Icon(
-                    Icons.search_outlined,
+                    Icons.notifications_outlined,
                     color: Colors.grey,
                   ),
                 ),
@@ -137,11 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: ClipOval(
               child: Material(
                 color: Colors.grey.shade800,
-                child: InkWell(
-                  splashColor: Colors.lightGreenAccent,
-                  onTap: () {},
-                  child: Image.asset("assets/images/photo.jpeg"),
-                ),
+                child: Image.asset("assets/images/photo.jpeg"),
               ),
             ),
           ),
