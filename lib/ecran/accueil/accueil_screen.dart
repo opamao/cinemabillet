@@ -1,4 +1,5 @@
 import 'package:cinemabillet/ecran/accueil/detail_film_screen.dart';
+import 'package:cinemabillet/ecran/films/detail_films_screen.dart';
 import 'package:flutter/material.dart';
 
 class AccueilScreen extends StatefulWidget {
@@ -250,13 +251,37 @@ class _AccueilScreenState extends State<AccueilScreen>
                       ),
                     ],
                   ),
-                  const Center(
-                    child: Text(
-                      'En ligne',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w600,
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10.0,
+                      crossAxisSpacing: 10.0,
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const DetailFilmsScreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                image: AssetImage("assets/images/black.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: Colors.grey.shade800,
+                                width: 4,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
